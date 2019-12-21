@@ -1,0 +1,25 @@
+<div
+  class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+>
+  <h1 class="h2">Import Excel</h1>
+  <div class="btn-toolbar mb-2 mb-md-0" dropdown>
+    <div class="container-upload">
+      <button
+        [disabled]="disabled"
+        [ngClass]="{ disabled: disabled }"
+        class="btn btn-secondary"
+        (click)="inputFile.click()"
+      >
+        <i class="fa fa-upload"></i> Upload
+      </button>
+      <input
+        name="file"
+        id="file"
+        (change)="upload($event)"
+        type="file"
+        #inputFile
+        hidden
+      />
+    </div>
+  </div>
+</div>

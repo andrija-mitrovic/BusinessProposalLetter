@@ -1,0 +1,8 @@
+.table-body {
+    overflow-y: scroll;
+    height: 80vh;
+}
+
+.table-body .table {
+    color: #033C70;
+}

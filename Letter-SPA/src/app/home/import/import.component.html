@@ -1,0 +1,22 @@
+<div class="container mt-3">
+    <app-upload [disabled]="showProgress" (uploadStatus)="uploadStatus($event)"></app-upload>
+
+    <p *ngIf="showProgress"> progress <strong>{{percentage}}%</strong></p>
+    <label class="error" [hidden]="!showDownloadError">Errors during download</label>
+    <label class="error" [hidden]="!showUploadError">Errors during upload</label>
+    
+  <h2 class="mt-5">File List</h2>
+    <table class="table">
+        <tbody>
+          <tr *ngFor="let file of files">
+            <th scope="row"><a>
+                {{file}}
+              </a></th>
+              <th style="text-align: right;">
+                  <app-download [disabled]="showProgress" [fileName]="file" (downloadStatus)="downloadStatus($event)" (deletedFileName)="deletedFileNameImport($event)"></app-download>
+              </th>
+          </tr>
+        </tbody>
+      </table>
+</div>
+

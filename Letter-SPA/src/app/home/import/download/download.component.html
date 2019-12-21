@@ -1,0 +1,6 @@
+<button class="btn btn-danger" style="width: 100px;" (click)="delete(fileName)">Delete</button>
+<button
+ [disabled]="disabled"
+ class="btn btn-primary ml-5"
+ [ngClass]="{'disabled': disabled}"
+ (click)="download()">Download</button>

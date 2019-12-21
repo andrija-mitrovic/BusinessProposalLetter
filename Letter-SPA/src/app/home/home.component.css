@@ -1,0 +1,7 @@
+nav .sidebar-sticky{
+    height: 100vh;
+}
+div.nav-link {
+    color: #47A7DA;
+    padding-top: 0;
+}

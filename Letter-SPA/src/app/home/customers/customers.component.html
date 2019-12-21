@@ -1,0 +1,55 @@
+<div class="customers">
+  <div
+    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+  >
+    <h1 class="h2">Customers</h1>
+    <div class="btn-toolbar mb-2 mb-md-0" dropdown>
+      <div class="btn-group mr-2">
+        <select
+          style="width: 350px;"
+          required
+          class="form-control"
+          id="favouriteValue"
+          name="fileName"
+          [(ngModel)]="fileName"
+          (ngModelChange)="onEmployeeSelected($event)"
+        >
+          <option *ngFor="let fileName of filesName" [value]="fileName">{{
+            fileName
+          }}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+ <h2 *ngIf="customers.length === 0" class="text-center pt-5" style="color: lightgray;"><i class="fa fa-magic"></i> Choose excel document ...</h2>
+  <div *ngIf="customers.length > 0" class="table-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Pib</th>
+          <th scope="col">Date Of Establish</th>
+          <th scope="col">Company</th>
+          <th scope="col">Form</th>
+          <th scope="col">Address</th>
+          <th scope="col">Manager Name</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of customers">
+          <td scope="row">{{ customer.id }}</td>
+          <td scope="row">{{ customer.pib }}</td>
+          <td scope="row">{{ customer.dateOfEstablish }}</td>
+          <td scope="row">{{ customer.companyName }}</td>
+          <td scope="row">{{ customer.form }}</td>
+          <td scope="row">{{ customer.address }}</td>
+          <td scope="row">{{ customer.menagerName }}</td>
+          <td scope="row">{{ customer.phone }}</td>
+          <td scope="row">{{ customer.email }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
